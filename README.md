@@ -1,6 +1,7 @@
 # Artificial-Neural-Network-Based-Face-Detection
 Matlab based Interface for Face Detection
-./Shuangyue Wen
+Written by
+Shuangyue Wen
 M.A.s.c 
 Electrical and Computer Engineering
 University of Ottawa
