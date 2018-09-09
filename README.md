@@ -97,5 +97,8 @@ Most faces are detected at multiple nearby positions, while false detections oft
 
 4). Find the distance clusters and locate the significantly changed pixels, final map the coordinates to the image, to accomplish the face detection.
 
+<div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908225740.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
+<p align="center">Fig.6 The diagram of merging. (a) The arbitrated image; (b) The mapping image with the high probabilities of presence of a face detection; (c) Mapping image after close operation; (d) Clustering in terms of the distance; (e) Overlapping eliminated mapping image. (f) Face detection image after merging processing step. </p>
+
 <div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908230010.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
 <p align="center">Fig.7 The results of the merging processing. (a) The structure elements used in the close operation implementation; In the (b) and (c), (i) The result from the previous arbitration step; (ii) The mapping image with the high probabilities of presence of a face detection; (iii) Mapping image after close operation; (iv) Overlapping eliminated image. </p>
