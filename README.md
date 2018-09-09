@@ -46,7 +46,7 @@ We fit a function which varies linearly across the window to the intensity value
 2). Coefficient undetermined linear functions would be applied to the two vectors respectively, so that the linear function would be represent the overall trend of the intensity values, and the fitting coefficients would be recorded;
 
 <div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908221759.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
-<p align="center">Fig.3 The result of the fitting function processing.(a) the intensity variation in horizontal; (b) the intensity variation in vertical; (c) and (d) the linear function fitting the sampled intensity values. </p>
+<p align="center">Fig.2 The result of the fitting function processing.(a) the intensity variation in horizontal; (b) the intensity variation in vertical; (c) and (d) the linear function fitting the sampled intensity values. </p>
 
 3). Generate a new correcting plate image, which intensity values in horizontal and vertical would be distributed as the fitting linear presents;
 
@@ -60,4 +60,10 @@ Then, histogram equalization is performed, which nonlinearly maps the intensity 
 In order to ignore the background, which could influence the facial feature during the pre-processing, a background mask could be used to eliminate this kinds of factors. The examples of the pre-processing results are shown in figure below.
 
 <div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908222421.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
-<p align="center">Fig.4 The steps in pre-processing a window region. First, a linear function is fit to the intensity values in the windows, and then subtracted out, correcting for some extreme lighting conditions. Then, histogram equalization is applied to the entire window. (a) Original window; (b) Best fit linear function; (c) Lighting corrected window; (d) Histogram equalized window. </p>
+<p align="center">Fig.3 The steps in pre-processing a window region. First, a linear function is fit to the intensity values in the windows, and then subtracted out, correcting for some extreme lighting conditions. Then, histogram equalization is applied to the entire window. (a) Original window; (b) Best fit linear function; (c) Lighting corrected window; (d) Histogram equalized window. </p>
+
+**·Training Data:**
+First, the positive training data were downloaded from the database provided by university of Massachusetts (FDDB), then, each one of the positive training example was cropped manually out of the original image.
+
+<div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908223751.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
+<p align="center">Fig.4 The sample Positive Training Data </p>
