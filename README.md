@@ -25,7 +25,7 @@ xwen055@uottawa.ca
 
 **Keywords—face detection; computer vision; artificial neural networks, machine learning.**
 
-<div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908230525.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
+<div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908230525.png" width="80%" height="80%" alt="model of an artificial neuron"/></div>
 <p align="center">Fig.1 The integrated GUI of the face detection system. For detail description of the algorithms and button function of GUI, refer to the following documents</p>
 
 **METHODS**
