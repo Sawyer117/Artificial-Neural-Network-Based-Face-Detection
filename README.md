@@ -48,3 +48,6 @@ We fit a function which varies linearly across the window to the intensity value
 <div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908221759.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
 <p align="center">Fig.3 The result of the fitting function processing.(a) the intensity variation in horizontal; (b) the intensity variation in vertical; (c) and (d) the linear function fitting the sampled intensity values. </p>
 
+3). Generate a new correcting plate image, which intensity values in horizontal and vertical would be distributed as the fitting linear presents;
+4). Converge the correcting plate image and the original window image to achieve the compensation.
+
