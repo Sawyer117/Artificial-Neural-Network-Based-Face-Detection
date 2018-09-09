@@ -26,6 +26,7 @@ xwen055@uottawa.ca
 **Keywords—face detection; computer vision; artificial neural networks, machine learning.**
 
 **Basic Introduction of ANN**
+
 The structure of the ANN is a computational model formed by hundreds of artificial neurons like its a biological inspiration. Each neuron is connected with others by a certain group of coefficients (weights,biases). They are also known as processing elements (PE) as they process information. Each PE has weighted inputs, transfer function(activation) and one output. In the concept of machine learning, the most significant thing of PE is an equation which balance inputs and outputs, different equations can be chosen based on different requirements, the sigmoid function is typically the most widely used one. ANNs are also called connectionist models as the connection weights represent the memory of the system. Although even one single neuron can accomplish a certain information processing procedure, the power of neural computations eventually comes from all the connections of neurons in a network. The supposed intelligence of artificial neural networks is a matter of argument. Artificial neural networks rarely have more than a few hundred or a few thousand processing elements, while the human brain has about 100 billion neurons.Other details such as activation function/backpropagation and gradient descent would be omitted for the limitation of time.
 
 <div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908182450.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
@@ -35,6 +36,7 @@ The structure of the ANN is a computational model formed by hundreds of artifici
 <p align="center">Fig.2 model of the simplest 3-layer ANN </p>
 
 **METHODS**
+
 The basic function of the entire system is a filter which receives 20 by 20 pixel region of the image as an input and generates an output ranging from 1 to -1, signifying the presence or absence of a face, namely. In order to detect faces anywhere in the objective image, the filter is applied at every location in the objective image. To further detect faces larger than the window size, the input image is repeatedly subsampled to decrease the size, and then the filter would be applied at each size of these subsampled images [11].
 Therefore, the artificial neural network based face detection system would be introduced in the following three parts: The pre-processing stage was firstly applied on the inputs of the every single image; then the training progress would be introduced and discussed in terms of their performance. Finally the merging and arbitrating stage would be implemented in order to eliminate the overlapping detections.
 
@@ -43,11 +45,13 @@ The actual image quality would be affected by the position of the photographer, 
 · Linear Fitting Process.
 We fit a function which varies linearly across the window to the intensity values in the whole region inside the window. Pixels near the edge of the image could be considered as the background, so those intensity values should be ignored in the processing when the filter is going to compute the lighting variation across the face in the objective images. The linear function which used to fit the objective image would approximate the overall brightness of each part of the window and can be also subtracted from the window to make a compensation for a variety of lighting conditions.
 1). Initialize two vectors, which represents the sampled intensity values in the middle of the window image, in horizontal and vertical direction respectively;
+
 2). Coefficient undetermined linear functions would be applied to the two vectors respectively, so that the linear function would be represent the overall trend of the intensity values, and the fitting coefficients would be recorded;
 
 <div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908221759.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
 <p align="center">Fig.3 The result of the fitting function processing.(a) the intensity variation in horizontal; (b) the intensity variation in vertical; (c) and (d) the linear function fitting the sampled intensity values. </p>
 
 3). Generate a new correcting plate image, which intensity values in horizontal and vertical would be distributed as the fitting linear presents;
+
 4). Converge the correcting plate image and the original window image to achieve the compensation.
 
