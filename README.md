@@ -1,7 +1,7 @@
 # Artificial-Neural-Network-Based-Face-Detection
 --Matlab based Interface for Face Detection
 
-This is the project for course ELG7172 directed by prof.Hilmi Dajani
+This is the project directed by prof.Hilmi Dajani
 
 The goal is to reproduce the work of Henry A. Rowley in [1]
 
