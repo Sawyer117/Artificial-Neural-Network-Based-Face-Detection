@@ -25,15 +25,6 @@ xwen055@uottawa.ca
 
 **Keywords—face detection; computer vision; artificial neural networks, machine learning.**
 
-**Basic Introduction of ANN**
-
-The structure of the ANN is a computational model formed by hundreds of artificial neurons like its a biological inspiration. Each neuron is connected with others by a certain group of coefficients (weights,biases). They are also known as processing elements (PE) as they process information. Each PE has weighted inputs, transfer function(activation) and one output. In the concept of machine learning, the most significant thing of PE is an equation which balance inputs and outputs, different equations can be chosen based on different requirements, the sigmoid function is typically the most widely used one. ANNs are also called connectionist models as the connection weights represent the memory of the system. Although even one single neuron can accomplish a certain information processing procedure, the power of neural computations eventually comes from all the connections of neurons in a network. The supposed intelligence of artificial neural networks is a matter of argument. Artificial neural networks rarely have more than a few hundred or a few thousand processing elements, while the human brain has about 100 billion neurons.Other details such as activation function/backpropagation and gradient descent would be omitted for the limitation of time.
-
-<div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908182450.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
-<p align="center">Fig.1 model of an artificial neuron</p>
-
-<div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908182540.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
-<p align="center">Fig.2 model of the simplest 3-layer ANN </p>
 
 **METHODS**
 
