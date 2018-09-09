@@ -32,7 +32,7 @@ The structure of the ANN is a computational model formed by hundreds of artifici
 <p align="center">Fig.1 model of an artificial neuron</p>
 
 <div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908182540.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
-<p align="center">Fig.2 the simplest model contain 3 layers: input layer, hidden layer and output layer</p>
+<p align="center">Fig.2 model of the simplest 3-layer ANN </p>
 
 **METHODS**
 The basic function of the entire system is a filter which receives 20 by 20 pixel region of the image as an input and generates an output ranging from 1 to -1, signifying the presence or absence of a face, namely. In order to detect faces anywhere in the objective image, the filter is applied at every location in the objective image. To further detect faces larger than the window size, the input image is repeatedly subsampled to decrease the size, and then the filter would be applied at each size of these subsampled images [11].
