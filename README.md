@@ -42,8 +42,10 @@ Therefore, the artificial neural network based face detection system would be in
 
 **A. Pre-processing**
 The actual image quality would be affected by the position of the photographer, the conditions of the external light source and so on. Therefore, some of the facial features would also be covered or shrunk to some degree. The preprocessing stage attempts to fix this gap to compensate and equalize the intensity values across the window.
+
 · Linear Fitting Process.
 We fit a function which varies linearly across the window to the intensity values in the whole region inside the window. Pixels near the edge of the image could be considered as the background, so those intensity values should be ignored in the processing when the filter is going to compute the lighting variation across the face in the objective images. The linear function which used to fit the objective image would approximate the overall brightness of each part of the window and can be also subtracted from the window to make a compensation for a variety of lighting conditions.
+
 1). Initialize two vectors, which represents the sampled intensity values in the middle of the window image, in horizontal and vertical direction respectively;
 
 2). Coefficient undetermined linear functions would be applied to the two vectors respectively, so that the linear function would be represent the overall trend of the intensity values, and the fitting coefficients would be recorded;
@@ -55,3 +57,12 @@ We fit a function which varies linearly across the window to the intensity value
 
 4). Converge the correcting plate image and the original window image to achieve the compensation.
 
+·Histogram Equalization:
+Then, histogram equalization is performed, which nonlinearly maps the intensity values to expand the range of intensities in the window. The histogram is computed for pixels inside the region in the window. This compensates for differences in camera input gains, as well as used to enhance contrast. It is not necessary that contrast will always be increase in this.
+1). First we have to calculate the probability mass function of all the pixels in this image;
+2). The next step involves calculation of cumulative distributive function;
+3). The last step, in which we have to map the new gray level values into number of pixels, and map these new values you are onto histogram.
+In order to ignore the background, which could influence the facial feature during the pre-processing, a background mask could be used to eliminate this kinds of factors. The examples of the pre-processing results are shown in figure below.
+
+<div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908222421.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
+<p align="center">Fig.4 The steps in pre-processing a window region. First, a linear function is fit to the intensity values in the windows, and then subtracted out, correcting for some extreme lighting conditions. Then, histogram equalization is applied to the entire window. (a) Original window; (b) Best fit linear function; (c) Lighting corrected window; (d) Histogram equalized window. </p>
