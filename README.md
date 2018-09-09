@@ -1,4 +1,4 @@
-# Artificial-Neural-Network-Based-Face-Detection
+# Artificial Neural Network Based Face Detection
 --Matlab based Interface for Face Detection
 
 This is the project directed by prof.Hilmi Dajani
