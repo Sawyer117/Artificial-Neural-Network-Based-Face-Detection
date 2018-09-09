@@ -82,3 +82,20 @@ Training set, Validation set and Test set. Training set is a set of examples use
 <p align="center">Fig.5 The entropy curve of performance (From top-down, left-right, the
 neuron are 10, 30, 50, 70, 100, 200). </p>
 
+**D.Merging**
+
+After the previous steps, there are many false detections of faces and the overlapping detections of the same face. In this
+step, the arbitration could be used to decrease and narrow down the wrong detections of a single neural network, and then,
+using the idea based on morphological operation to eliminate the overlapping detection of the same face [1]. In this project, the process to merge the overlapping face is different  with respect to the original work of rowley[1].
+
+Most faces are detected at multiple nearby positions, while false detections often occur with less consistency. This observation leads to a merging method which can eliminate many overlapping detections. For each location, the number of detections within a specified neighborhood of that location can be counted. If the number is above a threshold, then that location is classified as a face. This project used the morphology to narrow down area of the overlapping area, and could further eliminate the false detections, which presents in some isolated pixels. To merge the overlapping detections, a distance based clustering of the presenting detection can be proposed. The same face detection could be varied around a dense area, therefore, the distance from the same corner or the centroid to a constant fixed pixels would be clustered into the same class. The up and left corner of the nearby detections defines the location of the detection result box, thereby in the experiments section, this distance differences will be processing referred to as “threshold”. If a clustered particular location is significantly varied with respect to the other clustered detection location, which can indict that there is a new detection presence. Then the correctly identified as a face, and all other detection locations which overlap it, because they are likely to be errors and can therefore be eliminated.
+
+1). According to the outputs of the arbitration neural networks, a mapping image, which presenting the high presence probabilities of the face detection (more than 98%), can be generated;
+
+2). Morphology method, which using a fixed structure element, can play a role of close operation, the isolation of a few false detection could be eliminated, and the computation in the further merging step could be significantly reduced as well;
+3). Create and initialize an vector, so that the vector can be used to store the distance from the top left corner of every single detection to the image’s origin;
+
+4). Find the distance clusters and locate the significantly changed pixels, final map the coordinates to the image, to accomplish the face detection.
+
+<div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908225740.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
+<p align="center">Fig.6 The diagram of merging. (a) The arbitrated image; (b) The mapping image with the high probabilities of presence of a face detection; (c) Mapping image after close operation; (d) Clustering in terms of the distance; (e) Overlapping eliminated mapping image. (f) Face detection image after merging processing step. </p>
