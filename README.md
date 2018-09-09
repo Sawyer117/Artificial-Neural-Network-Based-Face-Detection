@@ -77,3 +77,8 @@ As for negative training examples, Practically any image can serve as a non-face
 
 The ANN can now be trained as all the training data generated. Here the toolbox in Matlab2013b is used to simplify the process. In training, the toolbox would automatically break the input data set into three categories:
 Training set, Validation set and Test set. Training set is a set of examples used for learning, that is to fit the weights in ANN. Validation set is used to tune the architecture(numbers of hidden neurons) of ANN. Test set has no direct influence over ANN structure, it is a set of examples used only to assess the performance (generalization ability) of a fully specified ANN. Although the toolbox did most of the job in building and training ANN, what’s the number of neurons that fits best for the task is vague. So in experiment, different numbers of hidden units were chosen (10, 30, 50, 70, 100 and 200) and performance were compared. The table and figure for the performance are listed below.
+
+<div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908224424.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
+<p align="center">Fig.5 The entropy curve of performance (From top-down, left-right, the
+neuron are 10, 30, 50, 70, 100, 200). </p>
+
