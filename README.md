@@ -29,7 +29,7 @@ xwen055@uottawa.ca
 <p align="center">Fig.1 The integrated GUI of the face detection system. For detail description of the algorithms and button function of GUI, refer to the following documents</p>
 
 <div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908231341.png" width="80%" height="80%" alt="model of an artificial neuron"/></div>
-<p align="center">Fig.2 The integrated GUI of the face detection system. For detail description of the algorithms and button function of GUI, refer to the following documents</p>
+<p align="center">Fig.2 Output obtained from the system described above (arbitrating from two neural network). For the notation on the top-left corn, three numbers are shown: the number of faces in the image, the number of faces detected correctly, and the number of false detection. For portrait image that only has one or two faces, the accuracy is high, it seldom gives out false positive/negative results. A detailed description of the algorithms and button function of GUI will be given as follows</p>
 
 
 **METHODS**
