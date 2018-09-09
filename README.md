@@ -28,6 +28,10 @@ xwen055@uottawa.ca
 <div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908230525.png" width="80%" height="80%" alt="model of an artificial neuron"/></div>
 <p align="center">Fig.1 The integrated GUI of the face detection system. For detail description of the algorithms and button function of GUI, refer to the following documents</p>
 
+<div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908231341.png" width="80%" height="80%" alt="model of an artificial neuron"/></div>
+<p align="center">Fig.2 The integrated GUI of the face detection system. For detail description of the algorithms and button function of GUI, refer to the following documents</p>
+
+
 **METHODS**
 
 The basic function of the entire system is a filter which receives 20 by 20 pixel region of the image as an input and generates an output ranging from 0 to 1(-1 to 1 in original paper of rowley[1], due to different activation function of output layer), signifying the presence or absence of a face, namely. In order to detect faces anywhere in the objective image, the filter is applied at every location in the objective image. To further detect faces larger than the window size, the input image is repeatedly subsampled to decrease the size, and then the filter would be applied at each size of these subsampled images [11].
@@ -104,3 +108,16 @@ Most faces are detected at multiple nearby positions, while false detections oft
 
 <div align="center"><img src="https://github.com/Sawyer117/Artificial-Neural-Network-Based-Face-Detection/blob/master/Pic/20180908230010.png" width="50%" height="50%" alt="model of an artificial neuron"/></div>
 <p align="center">Fig.7 The results of the merging processing. (a) The structure elements used in the close operation implementation; In the (b) and (c), (i) The result from the previous arbitration step; (ii) The mapping image with the high probabilities of presence of a face detection; (iii) Mapping image after close operation; (iv) Overlapping eliminated image. </p>
+
+**Introduction of GUI**
+
+All the functions and process steps mentioned above can be operated one after another sequentially, however, a graphical user interface (GUI) was built and serve as an integration of the whole programs. The important buttons are introduced as follows:
+
+**A. Crop Button**
+The Crop Button here enables users to manually crop a rectangle region in the input image that roughly matches the area with the face in the image. It is realized by the “getrect” Function in Matlab. The reason why this button is included here is because the unacceptably high computational cost, to sample an image with a small window, according to the size of the original image, the sample may go between 1000 and 20000times.Not to mention that the size of the face is not a constant, thus an image has to go under multiple times of down-sampling to be adjusted to the size of the face. In implementation, to sample a relatively small image, the computational cost is merely acceptable (about 1-2minutes.)If the input image become large (e.g. 1000*800 pixels), it would generate about 27000 sub-sampled images, and the total running time would go even more than 15 minutes. By introducing this crop button, because the size of the face is manually decided, the re-size ratio is also settled, thus, the input image is only down-sampled one time. And the time cost would be reduced greatly. (Although in the future, after we come up with a way to reduce the computational cost, we would cancel this function and do the face-detection in an automatic way.)
+
+**B. Face-Detect Button**
+The Face-Detect button enables the users to inspect the performance of the trained neuron network in an easy way. One can load the arbitrary image and crop any-part of the image, or some typical image which neuron network always make mistakes in classifying. How is it realized is by loading two trained neuron network: Both of them are with 100 hidden units, but one of them are trained with more negative examples. (So it is output may have higher precision but less recall, just to compensate the other neuron network)An arbitration part as introduced in the previous chapter is made, and the threshold at which we would accept it is a human face can also be adjusted (the value is chosen to be 0.98 in an empirical way).
+
+**C. Auto-FaceDetect Button**
+The auto face detect button passes a window through the down-sampled image, and the area which was determined as face would be recorded. And based on those region, the rectangles are plotted to highlight the face. The down-sample ratio is calculated based on the manual cropped image. Because the training data are all 20*20 images. The user cropped image would also to be considered as a 20*20 image. Thus the bigger value of real height and width of the user cropped image is compared to 20 and determine the ratio. We assume all the face in one image have similar size. Thus, by passing through a fixed-size sliding window, the face could be detected. As the face detected, the position would be recorded into a matrix, and in the same time, the rectangle command in Matlab plots the highlighted face area.
